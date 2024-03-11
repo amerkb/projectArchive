@@ -22,8 +22,8 @@ class UpdateNoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "note"=>"nullable|string",
-            "project_id"=>"nullable|exists:projects,id"
+            'note' => 'nullable|string',
+            'project_id' => 'nullable|exists:projects,id',
         ];
     }
 }

@@ -22,8 +22,8 @@ class CreateNoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "note"=>"required|string",
-            "project_id"=>"required|exists:projects,id"
+            'note' => 'required|string',
+            'project_id' => 'required|exists:projects,id',
         ];
     }
 }

@@ -20,10 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
-
-Route::apiResource('project', ProjectController::class);
-Route::apiResource('user', UserController::class);
-Route::apiResource('payment', PaymentController::class)->except('show', 'index');
-Route::apiResource('note', NoteController::class)->except('show', 'index');
 Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('project', ProjectController::class);
+    Route::apiResource('user', UserController::class);
+    Route::apiResource('payment', PaymentController::class)->except('show', 'index');
+    Route::apiResource('note', NoteController::class)->except('show', 'index');
 });

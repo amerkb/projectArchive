@@ -4,25 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NoteRequest\CreateNoteRequest;
 use App\Http\Requests\NoteRequest\UpdateNoteRequest;
-use App\Http\Resources\NoteResource;
 use App\Interfaces\NoteInterface;
 use App\Models\Note;
 use App\Models\Update;
-use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
-
     public function __construct(private NoteInterface $note)
     {
 
     }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(CreateNoteRequest $request)
     {
-      return $this->note->createNote($request->validated());
+        return $this->note->createNote($request->validated());
 
     }
 
@@ -31,7 +29,7 @@ class NoteController extends Controller
      */
     public function update(UpdateNoteRequest $request, Note $note)
     {
-        return $this->note->updateNote($request->validated(),$note);
+        return $this->note->updateNote($request->validated(), $note);
 
     }
 
